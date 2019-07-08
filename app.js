@@ -12,6 +12,11 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+//services
+var IBMCloudEnv = require('ibm-cloud-env');
+IBMCloudEnv.init();
+
+
 // create a new express server
 var app = express();
 

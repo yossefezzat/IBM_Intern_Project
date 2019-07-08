@@ -6,8 +6,9 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
+		"cfenv": "1.0.x",
 		"express": "4.13.x",
-		"cfenv": "1.0.x"
+		"ibm-cloud-env": "^0.2.6"
 	},
 	"repository": {},
 	"engines": {
