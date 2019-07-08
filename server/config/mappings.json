@@ -1,0 +1,33 @@
+{
+    "cloudant": [
+      {
+        "name": "Cloudant-st-Twitter-ANALYSIS",
+        "credentials": {
+          "apikey": "fW2DEwrgK0KK50JAh6Xt4cPtfPLN7sAuNRreyt_-ZEEG",
+          "host": "dae56466-cdda-4de0-87ac-7db0132174a4-bluemix.cloudantnosqldb.appdomain.cloud",
+          "password": "b2143710550c01833715aacc30f185b27080c88d19dafa0954df657208928906",
+          "port": 443,
+          "url": "https://dae56466-cdda-4de0-87ac-7db0132174a4-bluemix:b2143710550c01833715aacc30f185b27080c88d19dafa0954df657208928906@dae56466-cdda-4de0-87ac-7db0132174a4-bluemix.cloudantnosqldb.appdomain.cloud",
+          "username": "dae56466-cdda-4de0-87ac-7db0132174a4-bluemix"
+        }
+      }
+    ],
+    "toneAnalyzer": [
+      {
+        "name": "twitter-analysis-ibm-toneanalyzer-1562505340228",
+        "credentials": {
+          "apikey": "2O9UoOnMg8t7LFRWYRewaQ0cZtD8IL47wDp2hW8CZr7M",
+          "url": "https://gateway-wdc.watsonplatform.net/tone-analyzer/api"
+        }
+      }
+    ],
+    "naturalLanguageUnderstanding": [
+      {
+        "name": "twitter-analysis-ibm-naturallanguage-156250536238",
+        "credentials": {
+          "apikey": "WiQgtPHZJIOu1ooK6QXnCQyKBKyUdssCLjlpAAkL45Ef",
+          "url": "https://gateway-wdc.watsonplatform.net/natural-language-understanding/api"
+        }
+      }
+    ]
+  }
