@@ -1,5 +1,4 @@
 applications:
-- name: twitter-ibm-project
-  random-route: true
+- name: node-hello-world
   memory: 128M
-buildpack: sdk-for-nodejs
+  buildpack: sdk-for-nodejs
