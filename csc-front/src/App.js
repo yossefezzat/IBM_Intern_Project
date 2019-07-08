@@ -13,11 +13,11 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+      
         <Router>
-
+        <NavBar/>
           <Route path="/about" component={About} />
-          <Route path="/" exact={true} component={Charts} />
+          <Route path="/charts" exact={true} component={Charts} />
           <Route path="/tweets" component={Tweets} />
 
         </Router>
