@@ -2,3 +2,4 @@ applications:
 - name: twitter-ibm-project
   random-route: true
   memory: 128M
+buildpack: sdk-for-nodejs
