@@ -1,0 +1,42 @@
+.dataContainer,
+/* .userContainer, */
+.tweetContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timeStamp{
+    padding: 0 1em;
+    width: 120px;
+}
+.tweetContainer{
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding: 1em 0;
+    /* width:  */
+}
+.userNameInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.userNameInfo * {
+    padding: 0;
+    margin: 5px 0;
+}
+/* .toneContainer{
+    width: 60px;
+    height: 100%;
+} */
+.emoji{
+    width: 30px;
+    height: 30px;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
