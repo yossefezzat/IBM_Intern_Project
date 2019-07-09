@@ -12,17 +12,17 @@ import Tweets from './components/Tweets';
 export default class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Router>
 
+      <Router>
+        <div className="App">
+          <NavBar />
           <Route path="/about" component={About} />
           <Route path="/" exact={true} component={Charts} />
           <Route path="/tweets" component={Tweets} />
 
-        </Router>
+        </div>
+      </Router>
 
-      </div>
     )
   }
 }
