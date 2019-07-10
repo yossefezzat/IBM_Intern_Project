@@ -1,6 +1,6 @@
 import React from 'react';
 import Tweet from '../Tweet';
-
+import './style.css';
 export default class Tweets extends React.Component {
 
     state = {
@@ -39,6 +39,10 @@ export default class Tweets extends React.Component {
     }
 
     render(){
-        return <Tweet data={this.state.tweets[0]} />
+        return (
+            <div className="tweetsList">
+                <Tweet data={this.state.tweets[0]} />
+            </div>
+        )
     }
 }

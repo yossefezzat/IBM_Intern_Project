@@ -1,68 +1,63 @@
-#projects h1
-{
+#projects h1 {
     font-size: 3.6rem;
     font-weight: 700;
     color: #0f7bee;
 }
-#projects h3
-{
 
+#projects h3 {
     font-weight: 500;
     color: #0a0611;
 }
-#projects p
-{
+
+#projects p {
     font-size: 22px;
     color: #828282;
     padding: 0px 10px;
 }
 
 #pills-tab a {
-padding: 5px 15px;
+    padding: 5px 15px;
     font-weight: 500;
     font-size: 22px;
 }
-    #projects img
-{
-    margin-bottom:10px;
+
+#projects img {
+    margin-bottom: 10px;
 }
 
-#home
-{
-	width: 100%; 
-	min-height: 700px;
-	background-image: url(./assets/background.jpg);
-	background-size:cover;
-	background-position: center;
+#home {
+    width: 100%;
+    min-height: 700px;
+    background-image: url(./assets/background.jpg);
+    background-size: cover;
+    background-position: center;
     position: relative;
 }
-#home .background
-{
-position: absolute;
-top: 0;
-height: 100%;
-width: 100%;
-background-color: rgba(45, 50, 72, 0.5);
+
+#home .background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(45, 50, 72, 0.5);
 }
-#home .background .pen
-{
-	margin-top: 150px;
+
+#home .background .pen {
+    margin-top: 150px;
 }
-#home .background .pen .typing 
-{
-	font-size: 56px;
-	font-weight: 700; 
-	color: white;
+
+#home .background .pen .typing {
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
     text-shadow: 0px 5px 10px #035ebeb2;
 }
-@media only screen and (max-width: 600px) 
-{
-	.pen .typing
-   {
-	font-size: 30px;
-   
-    font-weight: 500; }
 
+@media screen and (max-width: 600px) {
+    #home .background .pen .typing {
+        font-size: 40px;
+        font-weight: 500;
+    }
 }
 
 /*

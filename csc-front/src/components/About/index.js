@@ -18,8 +18,8 @@ export default class About extends React.Component {
 	 		<div class="col-sm-12">
 			 <div class="pen">
        <Typing loop={true}>
-    <span class="typing">IBM EGYPT.</span>
-    <span class="typing" > CSC App To Analyze Everything Related to #IBM in Social Media</span>
+    <span className="typing">IBM EGYPT.</span>
+    <span className="typing" > CSC App To Analyze Everything Related to #IBM in Social Media</span>
     <Typing.Backspace count={"IBM EGYPT. CSC App To Analyze Everything Related to #IBM in Social Media".length} delay={500} />
   </Typing>  
             </div>
