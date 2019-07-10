@@ -1,0 +1,18 @@
+{
+	"name": "HelloWorldNodeApp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"@cloudant/cloudant": "^4.1.1",
+		"cfenv": "1.0.x",
+		"express": "4.13.x",
+		"ibm-cloud-env": "^0.2.6"
+	},
+	"repository": {},
+	"engines": {
+		"node": "4.2.x || 6.x"
+	}
+}

@@ -1,0 +1,4 @@
+applications:
+- name: twitter-analysis
+  memory: 128M
+  buildpack: sdk-for-nodejs
