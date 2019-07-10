@@ -1,0 +1,284 @@
+
+body
+{
+font-family: 'Poppins', sans-serif;
+}
+
+
+.nav-item
+{
+padding: 12px;
+font-size: 20px;
+font-weight: 600;
+}
+
+#home
+{
+	width: 100%; 
+	min-height: 700px;
+	background-image: url(../images/reza-namdari-ZgZsKFnSbEA-unsplash.jpg);
+	background-size:cover;
+	background-position: center;
+    position: relative;
+}
+#home .background
+{
+position: absolute;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(45, 50, 72, 0.5);
+}
+#home .background .pen
+{
+	margin-top: 200px;
+}
+#home .background .pen h1 
+{
+	font-size: 56px;
+	font-weight: 700; 
+	color: white;
+    text-shadow: 0px 5px 10px #243684;
+}
+@media only screen and (max-width: 600px) 
+{
+	.pen h1
+   {
+	font-size: 35px;
+   }
+}
+.pen h3
+{
+	font-size: 25px;
+	font-weight: 500; 
+	color: white;
+}
+
+@media only screen and (max-width: 600px) 
+{
+	.pen h3
+   {
+	font-size: 20px;
+   }
+}
+
+#home .background .button1
+{
+	margin-top: 15px;
+}
+
+#home .background .button1 a
+{
+	font-size: 24px;
+	font-weight: 600; 
+	color: white;
+text-align: center;
+}
+#home .background .icon 
+{
+margin: 5px;
+color: #fff;
+transition: all 1s;
+}
+#home .background .icon:hover
+{
+color: #114d81;
+}
+
+.bg-main {
+background-color: #516adb;
+
+}
+
+
+ #contact 
+{
+  background-color: #e3e3e3;
+  margin: 15px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+#contact .member2 .btn
+{
+text-align: center;
+} 
+#contact h1
+{
+color: #516adb;
+font-weight: 700;
+}
+
+/*
+#work .member2 .icon
+{
+color: #207bc9;
+transition: all 1s;
+}
+#work .member2 .icon:hover
+{
+color: #79bcf5;
+}*/
+
+#reviwe
+{
+ background-color: #e3e3e3;
+}
+#reviwe .item 
+{
+text-align: center;
+}
+#reviwe .owl-carousel img
+{
+border-radius: 50%;
+padding:10px;
+}
+
+.block
+{
+ background-color: #516adb;
+ padding-bottom: 30px;
+ }
+ 
+ .member
+{
+  
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+}
+.block .member img
+{
+  width:100%;
+  transition: all 2s;
+}
+.block .member img:hover
+{
+  transform: scale(0.9,0.9);
+  
+}
+.block .member p
+{
+text-align: center;
+font-weight: 400;  
+font-size: 18px;
+  color: #b5b5b5;
+}
+
+.block  p
+{
+font-weight: 400;  
+font-size: 18px;
+ color: #b5b5b5;
+}
+.block .member h2
+{
+color: #d8d8d8;
+text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+.block h1
+{
+color: #d8d8d8;
+  font-weight: 500;
+  }
+
+
+#pic
+{
+width: 100%; 
+min-height: 300px;
+background-image: url(../images/laura-margarita-cedeno-peralta-AG85S2McEC8-unsplash.jpg);
+background-size: 100% 100% ;
+background-attachment: fixed;
+color:#fff;
+position: relative;
+}
+#pic .background
+{
+top: 0;
+width: 100%;
+background-color: rgba(45, 50, 72, 0.5);
+}
+#pic .background .qoute 
+{ 
+margin : 30px 0;
+text-align: center;
+border:3;
+background-color: rgba(0,0,0,0.0);   
+}
+#pic .background .qoute span
+{
+color: #fff;
+font-size: 18px;
+font-weight: 600;
+}
+#pic .background .qoute .icon 
+{
+margin: 5px;
+color: #207bc9 ;
+transition: all 1s;
+}
+#pic .background .qoute .icon:hover
+{
+color: #fff;
+}
+
+#footer
+{
+background-color: #516adb;
+}
+#footer .inf h3 
+{
+font-size: 22px;
+font-weight: 700;
+color:#c0c7cc;
+}
+#footer .inf a
+{
+font-size: 15px;
+font-weight: 600;
+color: #c0c7cc;
+}
+#footer .inf p
+{
+font-size: 15px;
+font-weight: 600;
+color: #c0c7cc;
+}
+
+#footer h5
+{
+font-size: 18px;
+font-weight: 700;
+color:#efb20f;
+}
+ #footer .icon 
+{
+margin: 5px;
+color: #a6b9b9;
+transition: all 1s;
+}
+#footer .icon:hover
+{
+color: #be8e0d;
+}
+textarea.form-control {
+    height: auto;
+}
+.pen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+ text-align: center;
+
+}
+.text {
+  color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+  padding: 1em 2em;
+  text-align: center;
+  font-size: 3.5em;
+}
