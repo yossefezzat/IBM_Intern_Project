@@ -3,8 +3,11 @@ import { NavLink } from 'react-router-dom';
 import './style.css';
 import mahmoud from "./assets/mahmoud.jpeg";
 import muhammedsheriff from "./assets/muhammedsheriff.jpeg";
+import youseefezzat from "./assets/youseefezzat.jpeg";
+import Typing from 'react-typing-animation';
 export default class About extends React.Component {
 
+  
     render(){
         return (
 <section>
@@ -14,21 +17,14 @@ export default class About extends React.Component {
 		 <div class="row">
 	 		<div class="col-sm-12">
 			 <div class="pen">
-<h1 class="text"> IBM Egypt 
-  <span
-     class="txt-rotate"
-     data-period="2000"
-     data-rotate='[ "Awesome.", "Amezing.", "Big company.", "Perfect.", "Great!" ]'></span> </h1>
+       <Typing loop={true}>
+    <span class="typing">IBM EGYPT.</span>
+    <span class="typing" > CSC App To Analyze Everything Related to #IBM in Social Media</span>
+    <Typing.Backspace count={"IBM EGYPT. CSC App To Analyze Everything Related to #IBM in Social Media".length} delay={500} />
+  </Typing>  
             </div>
            </div>
         </div>
-        <div class="row">
-	     <div class=" col-sm-12 ">
-	       <div class="button1 text-center my-5 "> 
-          <NavLink to="/about" class="btn btn-primary btn-lg btn-block"> know More <i class=" icon fas fa-1x fa-hashtag"></i> </NavLink>
-          </div> 
-           </div>
-	     </div>
 	    </div>
 </div>
 </div>
@@ -47,14 +43,17 @@ export default class About extends React.Component {
                 
           <div class="col-md-12 text-center">
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item col-sm-4 text-center">
+<li class="nav-item col-sm-3 text-center">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
   </li>
-  <li class="nav-item col-sm-4 text-center">
+  <li class="nav-item col-sm-3 text-center">
     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">FRONT-END</a>
   </li>
-  <li class="nav-item col-sm-4 text-center">
+  <li class="nav-item col-sm-3 text-center">
     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">BACK-END</a>
+  </li>
+  <li class="nav-item col-sm-3 text-center">
+    <a class="nav-link " id="pills-monitors-tab" data-toggle="pill" href="#pills-monitors" role="tab" aria-controls="pills-monitors" aria-selected="false">MONITORS</a>
   </li>
 </ul>
 </div>
@@ -67,27 +66,37 @@ export default class About extends React.Component {
           
             <div class="row">
                   
-            <div class="col-md-6">
+            <div class="col-md-4">
         <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
         <h3> Muhammed Sheriff </h3>
         <p class="mb-4"> Front-end Developer</p>
                 </div>
-                <div class="col-md-6">  
+                <div class="col-md-4">
+        <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
+        <h3> Muhammed Sheriff </h3>
+        <p class="mb-4"> Front-end Developer</p>
+                </div>
+                <div class="col-md-4">
+        <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
+        <h3> Muhammed Sheriff </h3>
+        <p class="mb-4"> Front-end Developer</p>
+                </div>
+                <div class="col-md-4">  
         <img class="img-fluid" src={mahmoud} width="400" height="400"/>      
         <h3> Mahmoud Atwa </h3>
         <p class="mb-4"> Front-end Developer</p>
                 </div>
                 
-                <div class="col-md-6">
-        <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>
-        <h3> Muhammed Sheriff </h3>      
-        <p class="mb-4"> Front-end Developer</p>
+                <div class="col-md-4">
+        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>
+        <h3> Youseef Ezzat </h3>      
+        <p class="mb-4"> Back-end Developer</p>
                 </div>            
                 
-                <div class="col-md-6">  
-        <img class="img-fluid" src={mahmoud} width="400" height="400"/>      
-        <h3> Mahmoud Atwa </h3>
-        <p class="mb-4"> Front-end Developer</p>
+                <div class="col-md-4">  
+        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>      
+        <h3> Youseef Ezzat</h3>
+        <p class="mb-4"> Back-end Developer</p>
                 </div>
 
               </div>
@@ -118,6 +127,28 @@ export default class About extends React.Component {
           </div>
   </div>
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+  
+  <div class="container">
+          
+            <div class="row">
+              
+            
+            <div class="col-md-6">
+        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>
+        <h3> Youseef Ezzat </h3>      
+        <p class="mb-4"> Back-end Developer</p>
+                </div>            
+                
+                <div class="col-md-6">  
+        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>      
+        <h3> Youseef Ezzat </h3>
+        <p class="mb-4"> Back-end Developer</p>
+                </div>
+              </div>
+          
+          </div>
+  </div>
+  <div class="tab-pane fade" id="pills-monitors" role="tabpanel" aria-labelledby="pills-monitors-tab">
   
   <div class="container">
           

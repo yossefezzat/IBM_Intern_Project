@@ -14,7 +14,7 @@
 {
     font-size: 22px;
     color: #828282;
-    padding: 0px 150px;
+    padding: 0px 10px;
 }
 
 #pills-tab a {
@@ -46,37 +46,26 @@ background-color: rgba(45, 50, 72, 0.5);
 }
 #home .background .pen
 {
-	margin-top: 200px;
+	margin-top: 150px;
 }
-#home .background .pen h1 
+#home .background .pen .typing 
 {
 	font-size: 56px;
 	font-weight: 700; 
 	color: white;
-    text-shadow: 0px 5px 10px #243684;
+    text-shadow: 0px 5px 10px #035ebeb2;
 }
 @media only screen and (max-width: 600px) 
 {
-	.pen h1
+	.pen .typing
    {
-	font-size: 35px;
-   }
-}
-.pen h3
-{
-	font-size: 25px;
-	font-weight: 500; 
-	color: white;
+	font-size: 30px;
+   
+    font-weight: 500; }
+
 }
 
-@media only screen and (max-width: 600px) 
-{
-	.pen h3
-   {
-	font-size: 20px;
-   }
-}
-
+/*
 #home .background .button1
 {
 	margin-top: 15px;
@@ -90,13 +79,6 @@ background-color: rgba(45, 50, 72, 0.5);
 text-align: center;
 }
 
-
-
-
-
-
-
-/*
 .nav-tabs
 {
     border-bottom: none;
