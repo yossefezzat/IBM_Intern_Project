@@ -1,6 +1,7 @@
 //Libs & Components
 import React from 'react';
 import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
+import Dialogue from '../TweetDialogue';
 
 //Style
 import './style.css';
@@ -22,6 +23,10 @@ export default class Tweet extends React.Component {
         this.emojiHeight = 30;
         this.emojiWidth = 30;
         this.tone = null;
+        this.state = {
+            dialogShown: false
+        }
+        this.toggleDialogue = this.toggleDialogue.bind(this);
     }
 
     componentDidMount() {
@@ -51,9 +56,14 @@ export default class Tweet extends React.Component {
         this.tone = this.extractTone(emotions);
         return EMOJI[this.tone.label];
     }
-
+    toggleDialogue() {
+        this.setState({
+            dialogShown: !this.state.dialogShown
+        });
+    }
     render() {
         const { data } = this.props;
+        const emojiSrc = this.getEmoji(data.analysis.emotions);
         return (
             // <div className="dataContainer">
             <div className="tweetContainer">
@@ -65,7 +75,9 @@ export default class Tweet extends React.Component {
                         <h4 className="userDisplayName">{data.user.name}</h4>
                         <h5 className="userHandle">@{data.user.handle}</h5>
                     </div>
-                    <button type="button" className="expandBtn">
+                    <button onClick={this.toggleDialogue}
+                        type="button"
+                        className="expandBtn">
                         <svg viewBox="0 0 24 24">
                             <path d="M9.5,13.09L10.91,14.5L6.41,19H10V21H3V14H5V17.59L9.5,13.09M10.91,9.5L9.5,10.91L5,6.41V10H3V3H10V5H6.41L10.91,9.5M14.5,13.09L19,17.59V14H21V21H14V19H17.59L13.09,14.5L14.5,13.09M13.09,9.5L17.59,5H14V3H21V10H19V6.41L14.5,10.91L13.09,9.5Z" />
                         </svg>
@@ -77,11 +89,20 @@ export default class Tweet extends React.Component {
                 <div className="info">
                     <p className="timestamp">{new Date(data.tweet.timestamp).toUTCString()}</p>
                     <Img className="emoji"
-                        src={this.getEmoji(data.analysis.emotions)}
+                        src={emojiSrc}
                         alt={this.tone.label}
                         height={this.emojiHeight}
                         width={this.emojiWidth} />
                 </div>
+                {this.state.dialogShown ?
+                    <Dialogue
+                        tweet={data.tweet}
+                        user={data.user}
+                        analysis={data.analysis}
+                        emoji={emojiSrc}
+                        tone={this.tone}
+                        close={this.toggleDialogue} />
+                    : null}
             </div>
             // </div>
         )

@@ -7,7 +7,7 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-                <NavLink className="navbar-brand ml-5" to="/charts"> <img src={logo} width="120" height="60" /> </NavLink>
+                <NavLink className="navbar-brand ml-5" to="/charts"> <img src={logo} width="90" height="45" /> </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
