@@ -264,12 +264,16 @@ export default class Charts extends React.Component {
     render() {
 
         return (
-            <section>
-                <div className="tweetsContainer">
+                
+            <section class="canvas">
+            <div className="tweetsContainer">
                     <Tweets isSlider={true} />
+                    <h1 class=" H pt-5 py-2 ">Keywords</h1>
                     <WordChart />
                 </div>
-            <section class="canvas">
+            
+            <h1 class=" H pt-5 py-2 "> Charts</h1>
+
                 < div class="container my-5">
 
                     <div class="row">
@@ -319,8 +323,10 @@ export default class Charts extends React.Component {
 
                             <div class="row">
 
-                                <div class="col-md-12 text-center">
-                                    <canvas id="myChart3" width="400" height="400"></canvas>
+                                <div class="text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
+                                    <canvas style={{margin: '1em auto'}} id="myChart3" width="400" height="400"></canvas>
                                 </div>
                             </div>
 
@@ -333,7 +339,7 @@ export default class Charts extends React.Component {
                             <div class="row">
 
 
-                                <div class="col-md-12 text-center">
+                                <div class="col-md-12 text-center ">
                                     <canvas id="myChart4" width="400" height="400"></canvas>
                                 </div>
                             </div>
@@ -355,7 +361,6 @@ export default class Charts extends React.Component {
                         </div>
                     </div>
                 </div>
-            </section>
             </section>
         )
 
