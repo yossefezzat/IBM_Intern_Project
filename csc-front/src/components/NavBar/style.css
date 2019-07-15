@@ -1,5 +1,3 @@
-.nav-item {
-}
 .navbar{
     height: 70px;
     padding: 0 !important;
@@ -22,6 +20,7 @@
 .current{
     border-bottom-color: #317cc6 !important;
     background: #f8f9fa !important;
+    /* color: #096ad1 !important; */
     color: #317cc6 !important;
 }
 .current:hover{

@@ -14,14 +14,27 @@ export default class NavBar extends React.Component {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <NavLink to="/" exact={true} activeClassName="current" className="btn btn-primary">Charts</NavLink>
+                        <li className="nav-item"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse.show">
+                            <NavLink to="/"
+                                exact={true}
+                                activeClassName="current"
+                                className="btn btn-primary">Charts</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/tweets" activeClassName="current" className="btn btn-primary">Tweets</NavLink>
+                        <li className="nav-item"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse.show">
+                            <NavLink to="/tweets"
+                                activeClassName="current"
+                                className="btn btn-primary">Tweets</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/about" activeClassName="current" className="btn btn-primary">About</NavLink>
+                        <li className="nav-item"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse.show">
+                            <NavLink to="/about"
+                                activeClassName="current"
+                                className="btn btn-primary">About</NavLink>
                         </li>
                     </ul>
 
