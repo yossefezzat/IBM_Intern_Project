@@ -138,7 +138,9 @@ export default class Charts extends React.Component {
     render(){
         
         return ( 
-            <section class="canvas">
+            <section id="canvas" class="bg-light text-center mb-5">
+        <h1 class=" pt-5 py-2 "> CHARTS</h1>
+  
             < div class="container my-5">
           
           <div class="row">
@@ -168,13 +170,13 @@ export default class Charts extends React.Component {
           
             <div class="row">
                   
-            <div class="col-md-4">
+            <div class="col-md-4 mb-2">
             <canvas id="myChart" width="400" height="400"></canvas>      
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                 <canvas id="myChart1" width="400" height="400"></canvas>      
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-2">
                 <canvas id="myChart2" width="400" height="400"></canvas>      
                 </div>
                 </div>
@@ -189,12 +191,13 @@ export default class Charts extends React.Component {
             <div class="row">
 
                  <div class="col-md-6 text-center">
-                 <canvas id="myChart" width="400" height="400"></canvas> 
+                 <canvas id="myChart" width="600" height="600"></canvas> 
                     </div>
               </div>
           
-          </div>
+</div>
   </div>
+  
   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
   
   <div class="container">
@@ -202,8 +205,8 @@ export default class Charts extends React.Component {
             <div class="row">
               
             
-            <div class="col-md-1 text-center">
-                 <canvas id="myChart1" width="400" height="400"></canvas> 
+            <div class="col-md-12 text-center">
+                 <canvas id="myChart1" width="600" height="600"></canvas> 
                     </div>
               </div>
           
@@ -217,7 +220,7 @@ export default class Charts extends React.Component {
               
             
             <div class="col-md-12 text-center">
-                 <canvas id="myChart2" width="400" height="400"></canvas> 
+                 <canvas id="myChart2" width="600" height="600"></canvas> 
                     </div>
               </div>
           

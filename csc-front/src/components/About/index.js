@@ -4,6 +4,9 @@ import './style.css';
 import mahmoud from "./assets/mahmoud.jpeg";
 import muhammedsheriff from "./assets/muhammedsheriff.jpeg";
 import youseefezzat from "./assets/youseefezzat.jpeg";
+import youssefwaled from "./assets/youssefwaleed.jpeg";
+import hala from"./assets/hala.png";
+import marwa from"./assets/marwa.jpg";
 import Typing from 'react-typing-animation';
 export default class About extends React.Component {
 
@@ -67,14 +70,14 @@ export default class About extends React.Component {
             <div class="row">
                   
             <div class="col-md-4">
-        <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
-        <h3> Muhammed Sheriff </h3>
-        <p class="mb-4"> Front-end Developer</p>
+        <img class="img-fluid" src={hala} width="400" height="400"/>      
+        <h3> Hala Aziz </h3>
+        <p class="mb-4"> Mentor</p>
                 </div>
                 <div class="col-md-4">
-        <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
-        <h3> Muhammed Sheriff </h3>
-        <p class="mb-4"> Front-end Developer</p>
+        <img class="img-fluid" src={marwa} width="400" height="400"/>      
+        <h3> Marwa Arafa</h3>
+        <p class="mb-4"> Mentor</p>
                 </div>
                 <div class="col-md-4">
         <img class="img-fluid" src={muhammedsheriff} width="400" height="400"/>      
@@ -88,8 +91,8 @@ export default class About extends React.Component {
                 </div>
                 
                 <div class="col-md-4">
-        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>
-        <h3> Youseef Ezzat </h3>      
+        <img class="img-fluid" src={youssefwaled} width="400" height="400"/>
+        <h3> Youseef Waleed </h3>      
         <p class="mb-4"> Back-end Developer</p>
                 </div>            
                 
@@ -134,8 +137,8 @@ export default class About extends React.Component {
               
             
             <div class="col-md-6">
-        <img class="img-fluid" src={youseefezzat} width="400" height="400"/>
-        <h3> Youseef Ezzat </h3>      
+        <img class="img-fluid" src={youssefwaled} width="400" height="400"/>
+        <h3> Youseef Waleed </h3>      
         <p class="mb-4"> Back-end Developer</p>
                 </div>            
                 
@@ -155,13 +158,15 @@ export default class About extends React.Component {
             <div class="row">
               
             
-                <div class="col-md-6">
-        <img class="img-fluid" src="images/img2.gif"/>      
+            <div class="col-md-6">
+        <img class="img-fluid" src={hala} width="400" height="400"/>      
+        <h3> Hala Aziz </h3>
+        <p class="mb-4"> Mentor</p>
                 </div>
                 <div class="col-md-6">
-                
-        <img class="img-fluid" src="images/img5.jpg"/>      
-                
+        <img class="img-fluid" src={marwa} width="400" height="400"/>      
+        <h3> Marwa Arafa</h3>
+        <p class="mb-4"> Mentor</p>
                 </div>
               </div>
           

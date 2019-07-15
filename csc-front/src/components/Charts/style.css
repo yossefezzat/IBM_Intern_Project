@@ -1,7 +1,8 @@
-.canvas .row .onecanvas
-{
-max-width: 600px;
-text-align: center;
 
+#canvas h1
+{
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #317cc6;
 }
 
