@@ -11,7 +11,37 @@ export default class Charts extends React.Component {
     componentDidMount() {
 
         var ctx = document.getElementById('myChart');
+        var ctx2 = document.getElementById('myChart3');
         var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Positive', 'Negative'],
+                datasets: [{
+                    label: '100',
+                    data: [70, 30],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(30, 139, 228)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        new Chart(ctx2, {
             type: 'doughnut',
             data: {
                 labels: ['Positive', 'Negative'],
@@ -44,6 +74,7 @@ export default class Charts extends React.Component {
 
 
         ctx = document.getElementById('myChart1');
+        ctx2 = document.getElementById('myChart4');
         var myChart1 = new Chart(ctx, {
             type: 'line',
             data: {
@@ -80,9 +111,101 @@ export default class Charts extends React.Component {
                 }
             }
         });
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        
 
         ctx = document.getElementById('myChart2');
+        ctx2 = document.getElementById('myChart5');
         var myChart2 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [
+                    {
+                        label: 'positive',
+                        data: [12,],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Negative',
+                        data: [20],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        new Chart(ctx2, {
             type: 'line',
             data: {
                 labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -172,7 +295,7 @@ export default class Charts extends React.Component {
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                        < div class="container">
+                        <div class="container">
 
                             <div class="row">
 
@@ -196,8 +319,8 @@ export default class Charts extends React.Component {
 
                             <div class="row">
 
-                                <div class="col-md-6 text-center">
-                                    <canvas id="myChart" width="400" height="400"></canvas>
+                                <div class="col-md-12 text-center">
+                                    <canvas id="myChart3" width="400" height="400"></canvas>
                                 </div>
                             </div>
 
@@ -210,8 +333,8 @@ export default class Charts extends React.Component {
                             <div class="row">
 
 
-                                <div class="col-md-1 text-center">
-                                    <canvas id="myChart1" width="400" height="400"></canvas>
+                                <div class="col-md-12 text-center">
+                                    <canvas id="myChart4" width="400" height="400"></canvas>
                                 </div>
                             </div>
 
@@ -225,7 +348,7 @@ export default class Charts extends React.Component {
 
 
                                 <div class="col-md-12 text-center">
-                                    <canvas id="myChart2" width="400" height="400"></canvas>
+                                    <canvas id="myChart5" width="400" height="400"></canvas>
                                 </div>
                             </div>
 
