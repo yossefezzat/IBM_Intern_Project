@@ -9,6 +9,8 @@ import 'jquery/dist/jquery.min.js';
 import 'popper.js/dist/umd/popper.min.js';
 import 'chart.js/dist/Chart.min.css';
 import 'chart.js/dist/Chart.min.js';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
