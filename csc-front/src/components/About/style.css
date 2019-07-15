@@ -1,7 +1,7 @@
 #projects h1 {
     font-size: 3.6rem;
     font-weight: 700;
-    color: #0f7bee;
+    color: #317cc6;
 }
 
 #projects h3 {
@@ -51,6 +51,20 @@
     font-weight: 700;
     color: white;
     text-shadow: 0px 5px 10px #035ebeb2;
+}
+
+#home .background .pen .typing {
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0px 5px 10px #317cc6;
+}
+
+@media only screen and (max-width: 600px) {
+    #home .background .pen .typing {
+        font-size: 40px;
+        font-weight: 700;
+    }
 }
 
 @media screen and (max-width: 600px) {

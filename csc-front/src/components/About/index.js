@@ -53,7 +53,7 @@ export default class About extends React.Component {
     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">BACK-END</a>
   </li>
   <li class="nav-item col-sm-3 text-center">
-    <a class="nav-link " id="pills-monitors-tab" data-toggle="pill" href="#pills-monitors" role="tab" aria-controls="pills-monitors" aria-selected="false">MONITORS</a>
+    <a class="nav-link " id="pills-MENTORS-tab" data-toggle="pill" href="#pills-MENTORS" role="tab" aria-controls="pills-MENTORS" aria-selected="false">MENTORS</a>
   </li>
 </ul>
 </div>
@@ -148,7 +148,7 @@ export default class About extends React.Component {
           
           </div>
   </div>
-  <div class="tab-pane fade" id="pills-monitors" role="tabpanel" aria-labelledby="pills-monitors-tab">
+  <div class="tab-pane fade" id="pills-MENTORS" role="tabpanel" aria-labelledby="pills-MENTORS-tab">
   
   <div class="container">
           

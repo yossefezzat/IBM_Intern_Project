@@ -15,9 +15,14 @@
     min-width: 160px;/* Should use media query to handle smaller screen sizes */
     box-shadow: none !important;
     /* margin-right: 30px; */
+    background: #317cc6 !important;
 }
 .current{
-    border-bottom-color: #096ad1 !important;
+    border-bottom-color: #317cc6 !important;
     background: #f8f9fa !important;
-    color: #096ad1 !important;
+    /* color: #096ad1 !important; */
+    color: #317cc6 !important;
+}
+.current:hover{
+    /* border-bottom-color: transparent !important; */
 }
