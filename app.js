@@ -24,16 +24,6 @@ var password = 'Ronaldo7!';
 // Initialize the library with my account.
 var cloudant = Cloudant({ account: me, password: password });
 
-async function asyncCall() {
-  await cloudant.db.create('alice');
-  return cloudant.use('alice').insert({ happy: true }, 'rabbit');
-}
-
-asyncCall().then((data) => {
-  console.log(data); // { ok: true, id: 'rabbit', ...
-}).catch((err) => {
-  console.log(err);
-});
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
