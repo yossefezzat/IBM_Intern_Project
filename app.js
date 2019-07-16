@@ -19,10 +19,21 @@ var app = express();
 var Cloudant = require('@cloudant/cloudant');
 
 var me = 'youssef_walid@hotmail.com'; // Set this to your own account.
-var password = process.env.cloudant_password;
+var password = 'Ronaldo7!';
 
 // Initialize the library with my account.
 var cloudant = Cloudant({ account: me, password: password });
+
+async function asyncCall() {
+  await cloudant.db.create('alice');
+  return cloudant.use('alice').insert({ happy: true }, 'rabbit');
+}
+
+asyncCall().then((data) => {
+  console.log(data); // { ok: true, id: 'rabbit', ...
+}).catch((err) => {
+  console.log(err);
+});
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
@@ -38,15 +49,16 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 });
 
 
-async function asyncCall() {
-  await cloudant.db.create('alice');
-  return cloudant.use('alice').insert({ happy: true }, 'rabbit');
-}
 
-asyncCall().then((data) => {
-  console.log(data); // { ok: true, id: 'rabbit', ...
-}).catch((err) => {
-  console.log(err);
-});
+// async function asyncCall() {
+//   await cloudant.db.create('alice');
+//   return cloudant.use('alice').insert({ happy: true }, 'rabbit');
+// }
+
+// asyncCall().then((data) => {
+//   console.log(data); // { ok: true, id: 'rabbit', ...
+// }).catch((err) => {
+//   console.log(err);
+// });
 
 
