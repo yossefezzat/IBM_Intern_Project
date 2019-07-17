@@ -155,7 +155,7 @@ export default class Tweets extends React.Component {
         const width = window.innerWidth * 0.95;
         this.setState({
             width,
-            height: maxHeight + 25
+            height: maxHeight + 55
         });
     }
     render() {

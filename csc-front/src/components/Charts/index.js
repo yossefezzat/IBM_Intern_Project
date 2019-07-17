@@ -265,7 +265,7 @@ export default class Charts extends React.Component {
 
         return (
                 
-            <section class="canvas">
+            <section class="canvas pb-5">
             <div className="tweetsContainer">
                     <Tweets isSlider={true} />
                     <h1 class=" H pt-5 py-2 ">Keywords</h1>
@@ -323,13 +323,14 @@ export default class Charts extends React.Component {
 
                             <div class="row">
 
-                                <div class="text-center" style={{
+                                <div class=" ch text-center" style={{
                                     width: 'calc(100vh - 80px)'
                                 }}>
+                                <div class=" col-sm-12 ">
                                     <canvas style={{margin: '1em auto'}} id="myChart3" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -338,12 +339,15 @@ export default class Charts extends React.Component {
 
                             <div class="row">
 
+                            <div class="ch text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
 
-                                <div class="col-md-12 text-center ">
+                                <div class="  col-sm-12 ">
                                     <canvas id="myChart4" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="pills-MENTORS" role="tabpanel" aria-labelledby="pills-MENTORS-tab">
@@ -352,12 +356,14 @@ export default class Charts extends React.Component {
 
                             <div class="row">
 
-
-                                <div class="col-md-12 text-center">
+                                 <div class=" ch text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
+                                <div class="  col-sm-12 ">
                                     <canvas id="myChart5" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                 </div>
