@@ -15,6 +15,12 @@
     padding: 0px 10px;
 }
 
+#projects .img-fluid
+{
+border-radius: 50%;
+
+}
+
 #pills-tab a {
     padding: 5px 15px;
     font-weight: 500;

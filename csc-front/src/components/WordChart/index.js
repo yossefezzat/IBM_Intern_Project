@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import { resolveTxt } from 'dns';
 export default class WordChart extends React.Component{
     state = {
         transforms: []
@@ -11,13 +12,13 @@ export default class WordChart extends React.Component{
     moveWords = () => {
         const words = document.querySelectorAll('.word');
         let transforms = [];
-        const computedWidth = window.innerWidth > 800 ? 800 : window.innerWidth;
+        const parent = document.querySelector('.wordsContainer');
+        const width = parent.clientWidth;
         [].slice.call(words).forEach((word) => {
-            const x = Math.random() * computedWidth;
+            let x = Math.random() * width;
             const y = Math.random() * 400;
             transforms.push(`translate(${x}px, ${y}px)`);
         });
-        console.log(transforms);
         this.setState({
             transforms
         })

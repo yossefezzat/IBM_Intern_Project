@@ -148,7 +148,7 @@ export default class Charts extends React.Component {
             }
         });
 
-        
+
 
         ctx = document.getElementById('myChart2');
         ctx2 = document.getElementById('myChart5');
@@ -264,12 +264,14 @@ export default class Charts extends React.Component {
     render() {
 
         return (
-            <section>
+            <section id="canvas" class="bg-light text-center mb-5">
+
                 <div className="tweetsContainer">
                     <Tweets isSlider={true} />
                     <WordChart />
                 </div>
-            <section class="canvas">
+                <h1 class=" pt-5 py-2 "> CHARTS</h1>
+
                 < div class="container my-5">
 
                     <div class="row">
@@ -295,23 +297,25 @@ export default class Charts extends React.Component {
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                        <div class="container">
+                        < div class="container">
 
                             <div class="row">
 
-                                <div class="col-md-4">
+                                <div class="col-md-4 mb-2">
                                     <canvas id="myChart" width="400" height="400"></canvas>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 mb-2">
                                     <canvas id="myChart1" width="400" height="400"></canvas>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 mb-2">
                                     <canvas id="myChart2" width="400" height="400"></canvas>
                                 </div>
+                                <section class="canvas">
+
+                                </section>
+
                             </div>
-
-                        </div>
-
+                        </ div>
                     </div>
                     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
@@ -320,7 +324,7 @@ export default class Charts extends React.Component {
                             <div class="row">
 
                                 <div class="col-md-12 text-center">
-                                    <canvas id="myChart3" width="400" height="400"></canvas>
+                                    <canvas id="myChart3" width="600" height="600"></canvas>
                                 </div>
                             </div>
 
@@ -334,12 +338,13 @@ export default class Charts extends React.Component {
 
 
                                 <div class="col-md-12 text-center">
-                                    <canvas id="myChart4" width="400" height="400"></canvas>
+                                    <canvas id="myChart4" width="600" height="600"></canvas>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+                   
                     <div class="tab-pane fade" id="pills-MENTORS" role="tabpanel" aria-labelledby="pills-MENTORS-tab">
 
                         <div class="container">
@@ -347,15 +352,18 @@ export default class Charts extends React.Component {
                             <div class="row">
 
 
+
+
+
+
                                 <div class="col-md-12 text-center">
                                     <canvas id="myChart5" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
-            </section>
             </section>
         )
 
