@@ -15,15 +15,17 @@ var cfenv = require('cfenv');
 // create a new express server
 var app = express();
 
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
-
 app.use(express.static(`${__dirname}/ui-react/build`));
 
 app.get("/",function(req,res){
   res.json({message:"hello world"})
 
 })
+
+// get the app environment from Cloud Foundry
+var appEnv = cfenv.getAppEnv();
+
+
 
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
