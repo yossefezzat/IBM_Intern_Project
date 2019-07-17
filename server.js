@@ -25,13 +25,11 @@ app.get("/",function(req,res){
 
 })
 
-const port= process.env.PORT || 3001;
-
 // start server on the specified port and binding host
-app.listen(port, function() {
+app.listen(appEnv.port, '0.0.0.0', function() {
 
 	// print a message when the server starts listening
-  console.log("server starting on " + port);
+  console.log("server starting on " + appEnv.url);
 });
 
 
