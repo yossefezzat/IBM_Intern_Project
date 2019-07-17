@@ -18,7 +18,6 @@ var app = express();
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
-
 app.use(express.static(`${__dirname}/ui-react/build`));
 
 app.get("/",function(req,res){
@@ -26,11 +25,13 @@ app.get("/",function(req,res){
 
 })
 
+const port= process.env.PORT || 3001;
+
 // start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
+app.listen(port, function() {
 
 	// print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
+  console.log("server starting on " + port);
 });
 
 
