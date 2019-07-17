@@ -265,7 +265,7 @@ export default class Charts extends React.Component {
 
         return (
                 
-            <section class="canvas pb-5">
+            <section class="canvas pb-5 bg-light">
             <div className="tweetsContainer">
                     <Tweets isSlider={true} />
                     <h1 class=" H pt-5 py-2 ">Keywords</h1>
