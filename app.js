@@ -19,7 +19,7 @@ var app = express();
 var appEnv = cfenv.getAppEnv();
 
 
-app.use(express.static(`${__dirname}/ui-react/public`));
+app.use(express.static(`${__dirname}/ui-react/build`));
 
 app.get("/",function(req,res){
   res.json({message:"hello world"})
