@@ -7,6 +7,11 @@ import youseefezzat from "./assets/youseefezzat.jpeg";
 import youssefwaled from "./assets/youssefwaleed.jpeg";
 import hala from"./assets/hala.png";
 import marwa from"./assets/marwa.jpg";
+import one from"./assets/1.jpg";
+import two from"./assets/2.png";
+import three from"./assets/3.png";
+import four from"./assets/4.png";
+import five from"./assets/5.jpeg";
 import Typing from 'react-typing-animation';
 export default class About extends React.Component {
 
@@ -14,7 +19,7 @@ export default class About extends React.Component {
     render(){
         return (
 <section>
-<div id="home" class="py-5">
+<div id="home" class="pt-5">
 <div class="background">
     	<div class="container">
 		 <div class="row">
@@ -32,10 +37,47 @@ export default class About extends React.Component {
 </div>
 </div>
 
-            
+<div class="slider container-fluid bg-light text-center py-5">
+<h1 class="pt-2 "> Used Tools</h1>
+<div id="carouselExampleIndicators" class="carousel slide py-5" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="sl" ></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1" id="sl"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2" id="sl"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3" id="sl"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4" id="sl"></li>
+  </ol>
+  <div class="carousel-inner mb-5">
+    <div class="carousel-item active">
+      <div class="sora" style={{backgroundImage: `url('${one}')`}}> </div>
+    </div>
+    <div class="carousel-item">
+        <div class="sora" style={{backgroundImage: `url('${two}')`}}> </div>
+    </div>
+    <div class="carousel-item">
+        <div class="sora" style={{backgroundImage: `url('${three}')`}}> </div>
+    </div>
+    <div class="carousel-item">
+        <div class="sora" style={{backgroundImage: `url('${four}')`}}> </div>
+    </div>
+    <div class="carousel-item">
+        <div class="sora" style={{backgroundImage: `url('${five}')`}}> </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
 <div id="projects" class="bg-light text-center">       
-     
-     
+          
      <h1 class=" pt-5 py-2 "> OUR TEAM</h1>
     
     <p class="mb-4"> </p>     

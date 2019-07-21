@@ -31,15 +31,26 @@ border-radius: 50%;
     margin-bottom: 10px;
 }
 
-#home {
+#home{
     width: 100%;
-    min-height: 700px;
+    min-height: 600px;
     background-image: url(./assets/background.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
 }
-
+.sora{
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+}
+@media screen and (min-width: 1024px){
+    .sora{
+        height: 500px;
+    }
+}
 #home .background {
     position: absolute;
     top: 0;
@@ -78,6 +89,22 @@ border-radius: 50%;
         font-size: 40px;
         font-weight: 500;
     }
+}
+
+.slider h1
+{
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: #317cc6;
+}
+.slider #sl
+{
+    margin-top: 50px;
+background-color: #317cc6;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+
 }
 
 /*

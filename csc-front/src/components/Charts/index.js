@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './style.css';
 import Tweets from '../Tweets';
 import WordChart from '../WordChart';
@@ -264,15 +263,17 @@ export default class Charts extends React.Component {
     render() {
 
         return (
-            <section id="canvas" className="bg-light text-center mb-5">
-
-                <div className="tweetsContainer">
+                
+            <section class="canvas pb-5 bg-light">
+            <div className="tweetsContainer">
                     <Tweets isSlider={true} />
+                    <h1 class=" H pt-5 py-2 ">Keywords</h1>
                     <WordChart />
                 </div>
-                <h1 className=" pt-5 py-2 "> CHARTS</h1>
+            
+            <h1 class=" H pt-5 py-2 "> Charts</h1>
 
-                < div className="container my-5">
+                < div class="container my-5">
 
                     <div className="row">
 
@@ -294,14 +295,14 @@ export default class Charts extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="tab-content" id="pills-tabContent">
-                    <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                        < div className="container">
+                        <div class="container">
 
-                            <div className="row">
+                            <div class="row">
 
-                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-4 mb-2">
+                                <div class="col-md-4">
                                     <canvas id="myChart" width="400" height="400"></canvas>
                                 </div>
                                 <div key={Math.random().toString(32).replace('.', '')} className="col-md-4 mb-2">
@@ -323,11 +324,14 @@ export default class Charts extends React.Component {
 
                             <div className="row">
 
-                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
-                                    <canvas key={Math.random().toString(32).replace('.', '')} id="myChart3" width="600" height="600"></canvas>
+                                <div class=" ch text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
+                                <div class=" col-sm-12 ">
+                                    <canvas style={{margin: '1em auto'}} id="myChart3" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
@@ -336,12 +340,15 @@ export default class Charts extends React.Component {
 
                             <div className="row">
 
+                            <div class="ch text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
 
-                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
-                                    <canvas key={Math.random().toString(32).replace('.', '')} id="myChart4" width="600" height="600"></canvas>
+                                <div class="  col-sm-12 ">
+                                    <canvas id="myChart4" width="400" height="400"></canvas>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                    
@@ -353,12 +360,13 @@ export default class Charts extends React.Component {
 
 
 
-
-
-
-                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
+                                 <div class=" ch text-center" style={{
+                                    width: 'calc(100vh - 80px)'
+                                }}>
+                                <div class="  col-sm-12 ">
                                     <canvas id="myChart5" width="400" height="400"></canvas>
                                 </div>
+                            </div>
                             </div>
                         </div>
 
