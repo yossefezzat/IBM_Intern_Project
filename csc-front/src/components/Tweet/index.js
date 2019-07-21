@@ -15,8 +15,20 @@ import disgust from './assets/disgust.png';
 const EMOJI = {
     sadness, fear, anger, joy, disgust
 }
-export default class Tweet extends React.Component {
 
+
+/**
+ * @description Component responsiple for rendering and controlling a tweet item.
+ * @description Also, responsible for showing/hiding the tweet's Dialogue.
+ * @extends {React.Component}
+ */
+export default class Tweet extends React.Component {
+    /**
+     * @constructor
+     * @description initialized width & height of emoji as well as the component state.
+     * @description Binds `this` to the component in event handlers.
+     * @param {Object} props 
+     */
     constructor(props) {
         super(props);
 
@@ -29,11 +41,22 @@ export default class Tweet extends React.Component {
         this.toggleDialogue = this.toggleDialogue.bind(this);
     }
 
-    componentDidMount() {
-        console.log(this.props.data);
-    }
+    /**
+     * @deprecated
+     */
+    // componentDidMount() {
+        // console.log(this.props.data);
+    // }
 
 
+    /**
+     * @description returns the correct emoji label and value of the emotions.
+     * @description Correct emoji has the maximum confidence ratio. 
+     * @param {Array<Object>} emotions
+     * @returns {Object} Emoji
+     * @returns {String} Emoji.lable   
+     * @returns {Number} Emoji.value   
+     */
     extractTone(emotions) {
         if (this.tone) {
             return this.tone;
@@ -52,15 +75,29 @@ export default class Tweet extends React.Component {
     }
 
 
+    /**
+     * @description Calls `this.extractTone` and returns the emoji's label. 
+     * @param {Array<Object>} emotions 
+     * @returns {String} Label
+     */
     getEmoji(emotions) {
         this.tone = this.extractTone(emotions);
-        return EMOJI[this.tone.label];
+        return EMOJI[(this.tone || {}).label];
     }
+
+    /**
+     * @description Toggles `state.dialogShown` value.
+     * @returns {null}
+     */
     toggleDialogue() {
         this.setState({
             dialogShown: !this.state.dialogShown
         });
     }
+    /**
+     * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`
+     * @returns {JSX}
+     */
     render() {
         const { data } = this.props;
         const emojiSrc = this.getEmoji(data.analysis.emotions);
@@ -94,7 +131,7 @@ export default class Tweet extends React.Component {
                     <p className="timestamp">{new Date(data.tweet.timestamp).toUTCString()}</p>
                     <Img className="emoji"
                         src={emojiSrc}
-                        alt={this.tone.label}
+                        alt={(this.tone || {}).label}
                         height={this.emojiHeight}
                         width={this.emojiWidth} />
                 </div>
@@ -108,7 +145,6 @@ export default class Tweet extends React.Component {
                         close={this.toggleDialogue} />
                     : null}
             </div>
-            // </div>
         )
     }
 }

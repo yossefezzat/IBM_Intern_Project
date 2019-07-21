@@ -1,8 +1,18 @@
 import React from 'react';
 import './style.css';
 import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
+
+
+/**
+ * @description Component responsiple for rendering and controlling a tweet's dialogue/pop-up.
+ * @extends {React.Component}
+ */
 export default class Dialogue extends React.Component {
-    
+    /**
+     * @constructor
+     * @description initialized width & height of emoji.
+     * @param {Object} props 
+     */
     constructor(props) {
         super(props);
 
@@ -10,16 +20,21 @@ export default class Dialogue extends React.Component {
         this.emojiWidth = 30;
     }
 
+
+    /**
+     * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`
+     * @returns {JSX}
+     */
     render() {
         const { tweet, user, analysis, tone, emoji, close } = this.props;
         return (
             <div className="dialogueContainer">
-                <div class="box">
+                <div className="box">
                     <div className="dialogueHeader">
                         <h3 className="headerText">Tweet enrichments</h3>
                         <button onClick={close} type="button" className="closeBtn">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L1`0.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                             </svg>
                         </button>
                     </div>
@@ -71,7 +86,7 @@ export default class Dialogue extends React.Component {
                                         {analysis.emotions.map(emotion => {
                                             const key = Object.keys(emotion).pop();
                                             return (
-                                                <li className="nestedlistItem">
+                                                <li key={Date.now().toString(36) + (Math.random() * 500).toString(36).replace('.', '')} className="nestedlistItem">
                                                     <h5 className="nestedDetailsLabel">{key}</h5>
                                                     <span className="numericValue">{emotion[key]}</span>
                                                 </li>
@@ -79,7 +94,7 @@ export default class Dialogue extends React.Component {
                                         })}
                                     </ul>
                                 </li>
-                                <li className="listItem">
+                                <li key={Date.now()} className="listItem">
                                     <h4 className="detailsLabel">Tone</h4>
                                     <p className="detailsValue">
                                         {tone.label}

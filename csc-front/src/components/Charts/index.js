@@ -9,9 +9,9 @@ import Chart from 'chart.js';
 export default class Charts extends React.Component {
 
     componentDidMount() {
-
         var ctx = document.getElementById('myChart');
         var ctx2 = document.getElementById('myChart3');
+        if(!ctx || !ctx2) return;
         var myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -264,99 +264,99 @@ export default class Charts extends React.Component {
     render() {
 
         return (
-            <section id="canvas" class="bg-light text-center mb-5">
+            <section id="canvas" className="bg-light text-center mb-5">
 
                 <div className="tweetsContainer">
                     <Tweets isSlider={true} />
                     <WordChart />
                 </div>
-                <h1 class=" pt-5 py-2 "> CHARTS</h1>
+                <h1 className=" pt-5 py-2 "> CHARTS</h1>
 
-                < div class="container my-5">
+                < div className="container my-5">
 
-                    <div class="row">
+                    <div className="row">
 
-                        <div class="col-md-12 text-center">
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item col-sm-3 text-center">
-                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
+                        <div className="col-md-12 text-center">
+                            <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li key={Math.random().toString(32).replace('.', '')} className="nav-item col-sm-3 text-center">
+                                    <a className="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ALL</a>
                                 </li>
-                                <li class="nav-item col-sm-3 text-center">
-                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">TOTAL NUM OF TWEETS</a>
+                                <li key={Math.random().toString(32).replace('.', '')} className="nav-item col-sm-3 text-center">
+                                    <a className="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">TOTAL NUM OF TWEETS</a>
                                 </li>
-                                <li class="nav-item col-sm-3 text-center">
-                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">SENTMENT OVER TIME</a>
+                                <li key={Math.random().toString(32).replace('.', '')} className="nav-item col-sm-3 text-center">
+                                    <a className="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">SENTMENT OVER TIME</a>
                                 </li>
-                                <li class="nav-item col-sm-3 text-center">
-                                    <a class="nav-link " id="pills-MENTORS-tab" data-toggle="pill" href="#pills-MENTORS" role="tab" aria-controls="pills-MENTORS" aria-selected="false">EMOTIONAL TONE OVER TIME</a>
+                                <li key={Math.random().toString(32).replace('.', '')} className="nav-item col-sm-3 text-center">
+                                    <a className="nav-link " id="pills-MENTORS-tab" data-toggle="pill" href="#pills-MENTORS" role="tab" aria-controls="pills-MENTORS" aria-selected="false">EMOTIONAL TONE OVER TIME</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
-                        < div class="container">
+                        < div className="container">
 
-                            <div class="row">
+                            <div className="row">
 
-                                <div class="col-md-4 mb-2">
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-4 mb-2">
                                     <canvas id="myChart" width="400" height="400"></canvas>
                                 </div>
-                                <div class="col-md-4 mb-2">
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-4 mb-2">
                                     <canvas id="myChart1" width="400" height="400"></canvas>
                                 </div>
-                                <div class="col-md-4 mb-2">
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-4 mb-2">
                                     <canvas id="myChart2" width="400" height="400"></canvas>
                                 </div>
-                                <section class="canvas">
+                                <section key={Math.random().toString(32).replace('.', '')} className="canvas">
 
                                 </section>
 
                             </div>
                         </ div>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                        <div class="container">
+                        <div className="container">
 
-                            <div class="row">
+                            <div className="row">
 
-                                <div class="col-md-12 text-center">
-                                    <canvas id="myChart3" width="600" height="600"></canvas>
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
+                                    <canvas key={Math.random().toString(32).replace('.', '')} id="myChart3" width="600" height="600"></canvas>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div className="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
-                        <div class="container">
+                        <div className="container">
 
-                            <div class="row">
+                            <div className="row">
 
 
-                                <div class="col-md-12 text-center">
-                                    <canvas id="myChart4" width="600" height="600"></canvas>
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
+                                    <canvas key={Math.random().toString(32).replace('.', '')} id="myChart4" width="600" height="600"></canvas>
                                 </div>
                             </div>
 
                         </div>
                     </div>
                    
-                    <div class="tab-pane fade" id="pills-MENTORS" role="tabpanel" aria-labelledby="pills-MENTORS-tab">
+                    <div className="tab-pane fade" id="pills-MENTORS" role="tabpanel" aria-labelledby="pills-MENTORS-tab">
 
-                        <div class="container">
+                        <div className="container">
 
-                            <div class="row">
-
-
+                            <div className="row">
 
 
 
 
-                                <div class="col-md-12 text-center">
+
+
+                                <div key={Math.random().toString(32).replace('.', '')} className="col-md-12 text-center">
                                     <canvas id="myChart5" width="400" height="400"></canvas>
                                 </div>
                             </div>

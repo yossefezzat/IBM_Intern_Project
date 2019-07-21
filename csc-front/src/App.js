@@ -8,8 +8,16 @@ import About from './components/About';
 import Charts from './components/Charts';
 import Tweets from './components/Tweets';
 
-
+/**
+ * @description Main compoenent for our app, handles routing & acts as the entry point.
+ * @extends {React.Component}
+ */
 export default class App extends React.Component {
+
+  /**
+   * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`
+   * @returns {JSX}
+   */
   render() {
     return (
 

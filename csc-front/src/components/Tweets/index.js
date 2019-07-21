@@ -3,8 +3,21 @@ import Tweet from '../Tweet';
 import './style.css';
 
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-export default class Tweets extends React.Component {
 
+
+/**
+ * @description Component responsiple for rendering and controlling any list of tweets.
+ * @description Renders tweets as a slider or as a paginated full screen list.
+ * @extends {React.Component}
+ */
+export default class Tweets extends React.Component {
+    /**
+    * @constructor
+    * @description initializes the component state with tweets list.
+    * @todo When API is ready, fetch it from server. 
+    * @description Binds `this` to the component in event handlers.
+    * @param {Object} props 
+    */
     constructor(props) {
         super(props);
         this.state = {
@@ -136,7 +149,11 @@ export default class Tweets extends React.Component {
         this.handleAspectRatio = this.handleAspectRatio.bind(this);
     }
 
-
+    /**
+     * @description Checks if the component will be used as a slider as in `Charts` page.
+     * @description If so, it calls `this.handleAspectRatio` and binds it to `window.onresize` event.
+     * @returns {null}
+     */
     componentDidMount() {
         const { isSlider } = this.props;
         if (isSlider) {
@@ -145,6 +162,11 @@ export default class Tweets extends React.Component {
         }
     }
 
+    /**
+     * @description Modify's the aspect ratio of the slider to prevent glitching and/or unwanted behaviour.
+     * @description Updates the component state with the new aspect ratio. 
+     * @returns {null}
+     */
     handleAspectRatio() {
         const tweets = document.querySelectorAll('.tweetContainer')
         let maxHeight = 0;
@@ -155,9 +177,13 @@ export default class Tweets extends React.Component {
         const width = window.innerWidth * 0.95;
         this.setState({
             width,
-            height: maxHeight + 25
+            height: maxHeight + 55
         });
     }
+    /**
+     * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`
+     * @returns {JSX}
+     */
     render() {
         const { isSlider } = this.props;
         const numTweets = (this.state.tweets || []).length;
@@ -173,13 +199,13 @@ export default class Tweets extends React.Component {
                     <Slider>
                         {this.state.tweets.slice(0, 5).map((tweet, i) => {
                             return (
-                                <Slide index={i}>
+                                <Slide key={Math.random().toString(32).replace('.', '')} index={i}>
                                     <Tweet isSlider={true} data={tweet} />
                                 </Slide>
                             )
                         })}
                     </Slider>
-                    
+
                     <ButtonBack className="controlBtn backBtn">
                         <svg viewBox="0 0 24 24">
                             <path fill="#ffffff" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
@@ -195,7 +221,7 @@ export default class Tweets extends React.Component {
         } else {
             return (
                 <div className="tweetsList">
-                    {this.state.tweets.map(tweet => <Tweet data={tweet} />)}
+                    {this.state.tweets.map(tweet => <Tweet key={Math.random().toString(32).replace('.', '')} data={tweet} />)}
                 </div>
             )
         }
