@@ -8,7 +8,9 @@
     z-index: 99999;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    padding: 50px 0;
+    overflow: auto;
 }
 .box{
     width: 95%;
@@ -57,7 +59,7 @@
 .detailsContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     height: 100%;
 }
 .generalDetails,

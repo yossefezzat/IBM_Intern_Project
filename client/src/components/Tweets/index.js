@@ -24,128 +24,25 @@ export default class Tweets extends React.Component {
             tweets: [
                 {
                     user: {
-                        handle: '__atwa',
-                        name: 'Mahmoud',
-                        id: 'ffas1166s6f',
-                        imageURL: 'http://simpleicon.com/wp-content/uploads/user1.png'
                     },
                     tweet: {
-                        content: 'This is dobe. @IBM',
-                        timestamp: 13334465,
-                        retweets: 5,
-                        loved: 20,
-                        id: 1111111111119774,
-                        entities: [
-                            { TwitterHandle: '@IBM' },
-                        ]
+                        content: 'Loading...',
                     },
                     analysis: {
                         emotions: [
-                            { sadness: 0.1793 },
-                            { joy: 0.55 },
-                            { fear: 0.001 },
-                            { anger: 0.0035 }
+                            { anger: 1 }
                         ],
                         sentiment: {
-                            label: 'negative',
-                            value: -0.319
-                        }
-                    }
-                },
-                {
-                    user: {
-                        handle: '__atwa',
-                        name: 'Mahmoud',
-                        id: 'ffas1166s6f',
-                        imageURL: 'http://simpleicon.com/wp-content/uploads/user1.png'
-                    },
-                    tweet: {
-                        content: 'This is dobe. @IBM',
-                        timestamp: 13334465,
-                        retweets: 5,
-                        loved: 20,
-                        id: 1111111111119774,
-                        entities: [
-                            { TwitterHandle: '@IBM' },
-                        ]
-                    },
-                    analysis: {
-                        emotions: [
-                            { sadness: 0.1793 },
-                            { joy: 0.55 },
-                            { fear: 0.001 },
-                            { anger: 0.0035 }
-                        ],
-                        sentiment: {
-                            label: 'negative',
-                            value: -0.319
-                        }
-                    }
-                },
-                {
-                    user: {
-                        handle: '__atwa',
-                        name: 'Mahmoud',
-                        id: 'ffas1166s6f',
-                        imageURL: 'http://simpleicon.com/wp-content/uploads/user1.png'
-                    },
-                    tweet: {
-                        content: 'This is dobe. @IBM',
-                        timestamp: 13334465,
-                        retweets: 5,
-                        loved: 20,
-                        id: 1111111111119774,
-                        entities: [
-                            { TwitterHandle: '@IBM' },
-                        ]
-                    },
-                    analysis: {
-                        emotions: [
-                            { sadness: 0.1793 },
-                            { joy: 0.55 },
-                            { fear: 0.001 },
-                            { anger: 0.0035 }
-                        ],
-                        sentiment: {
-                            label: 'negative',
-                            value: -0.319
-                        }
-                    }
-                },
-                {
-                    user: {
-                        handle: '__atwa',
-                        name: 'Mahmoud',
-                        id: 'ffas1166s6f',
-                        imageURL: 'http://simpleicon.com/wp-content/uploads/user1.png'
-                    },
-                    tweet: {
-                        content: 'This is dobe. @IBM',
-                        timestamp: 13334465,
-                        retweets: 5,
-                        loved: 20,
-                        id: 1111111111119774,
-                        entities: [
-                            { TwitterHandle: '@IBM' },
-                        ]
-                    },
-                    analysis: {
-                        emotions: [
-                            { sadness: 0.1793 },
-                            { joy: 0.55 },
-                            { fear: 0.001 },
-                            { anger: 0.0035 }
-                        ],
-                        sentiment: {
-                            label: 'negative',
-                            value: -0.319
+                            label: null,
+                            value: null
                         }
                     }
                 }
             ]
 
         }
-
+        this.numCalls = 0;
+        this.handleScroll = this.handleScroll.bind(this);
         this.handleAspectRatio = this.handleAspectRatio.bind(this);
     }
 
@@ -159,9 +56,76 @@ export default class Tweets extends React.Component {
         if (isSlider) {
             this.handleAspectRatio();
             window.onresize = this.handleAspectRatio;
+        }else{
+            this.handleScroll();
         }
+        this.getTweets(0)
+        .then(tweets => {
+            this.setState({
+                tweets
+            });
+        })
     }
-
+    getTweets(skipCount){
+        this.numCalls++;
+        return fetch('https://ibm.articlebox.net/tweets?skipCount='+skipCount)
+        .then(resp => resp.json())
+        .then(tweets => {
+            const { rows } = tweets;
+            const _tweets = rows.map(row => {
+                row = row.value;
+                let tweet = {};
+                tweet.user = {
+                    handle: row.username,
+                    name: row.displayName,
+                    id: row.userID,
+                    imageURL: row.userImageURL
+                };
+                tweet.tweet = {
+                    content: row.tweetText,
+                    timestamp: row.timestamp,
+                    retweets: 5,
+                    loved: 20,
+                    id: row.tweetID,
+                    entities: row.entities,
+                }
+                tweet.keywords = row.nlu.keywords;
+                tweet.entities = [];
+                row.entities.hashtags.map(hashtag => {
+                    tweet.entities.push({
+                        type: 'hashtag',
+                        value: hashtag.text
+                    });
+                });
+                row.entities.urls.map(url => {
+                    tweet.entities.push({
+                        type: 'url',
+                        value: url.url
+                    });
+                });
+                row.entities.user_mentions.map(user => {
+                    tweet.entities.push({
+                        type: 'user',
+                        value: user.name,
+                        handle: user.screen_name
+                    });
+                });
+                tweet.analysis = {
+                    emotions: row.tone.tones.map(tone => {
+                        return {
+                            [tone.tone_id]: tone.score
+                        }
+                    }),
+                    sentiment: {
+                        label: row.nlu.sentiment.document.label,
+                        value: row.nlu.sentiment.document.score
+                    }
+                }
+                return tweet;
+            });
+            return _tweets
+        });
+    }
     /**
      * @description Modify's the aspect ratio of the slider to prevent glitching and/or unwanted behaviour.
      * @description Updates the component state with the new aspect ratio. 
@@ -179,6 +143,18 @@ export default class Tweets extends React.Component {
             width,
             height: maxHeight + 55
         });
+    }
+    handleScroll() {
+        window.onscroll = (e) => {
+            if(document.scrollingElement.scrollHeight - document.scrollingElement.scrollTop === window.innerHeight){
+                this.getTweets(this.numCalls * 15)
+                .then(tweets => {
+                    this.setState({
+                        tweets: [...this.state.tweets, ...tweets]
+                    })
+                })
+            }
+        }
     }
     /**
      * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`

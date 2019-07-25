@@ -58,6 +58,7 @@ export default class Tweet extends React.Component {
      * @returns {Number} Emoji.value   
      */
     extractTone(emotions) {
+        console.log('emotions', emotions);
         if (this.tone) {
             return this.tone;
         }
@@ -67,7 +68,9 @@ export default class Tweet extends React.Component {
             const KEY = (Object.keys(emotion) || []).pop();
             if (!KEY) continue;
             if (emotion[KEY] > major[KEY_PREV]) {
-                major = emotion[KEY];
+                major = {
+                    [KEY]: emotion[KEY]
+                };
                 KEY_PREV = KEY;
             }
         }
@@ -139,6 +142,8 @@ export default class Tweet extends React.Component {
                     <Dialogue
                         tweet={data.tweet}
                         user={data.user}
+                        entities={data.entities}
+                        keywords={data.keywords}
                         analysis={data.analysis}
                         emoji={emojiSrc}
                         tone={this.tone}

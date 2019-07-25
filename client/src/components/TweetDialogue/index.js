@@ -26,7 +26,7 @@ export default class Dialogue extends React.Component {
      * @returns {JSX}
      */
     render() {
-        const { tweet, user, analysis, tone, emoji, close } = this.props;
+        const { tweet, user, analysis, tone, emoji, close, keywords, entities } = this.props;
         return (
             <div className="dialogueContainer">
                 <div className="box">
@@ -34,7 +34,7 @@ export default class Dialogue extends React.Component {
                         <h3 className="headerText">Tweet enrichments</h3>
                         <button onClick={close} type="button" className="closeBtn">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L1`0.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                             </svg>
                         </button>
                     </div>
@@ -62,11 +62,39 @@ export default class Dialogue extends React.Component {
                                 {/*Waiting for API documentation. */}
                                 <li className="listItem">
                                     <h4 className="detailsLabel">Keywords</h4>
-                                    <p className="detailsValue"></p>
+                                    {keywords.map(keyword => {
+                                        return <p className="detailsValue">{keyword.text}</p>
+                                    })}
                                 </li>
                                 <li className="listItem">
                                     <h4 className="detailsLabel">Entities</h4>
-                                    <p className="detailsValue"></p>
+                                    {entities.map(entity => {
+                                        if (entity.type === "hashtag") {
+                                            return (<p className="detailsValue">
+                                                <a target="_blank"
+                                                    href={`https://twitter.com/hashtag/${entity.value}`}>
+                                                    #{entity.value}
+                                                </a>
+                                            </p>)
+                                        }
+                                        if (entity.type === "user") {
+                                            return (<p className="detailsValue">
+                                                <a target="_blank"
+                                                    href={`https://twitter.com/${entity.handle}`}>
+                                                    @{entity.value}
+                                                </a>
+                                            </p>)
+                                        }
+                                        if (entity.type === "url") {
+                                            return (<p className="detailsValue">
+                                                <a target="_blank"
+                                                    href={`${entity.value}`}>
+                                                    {entity.value}
+                                                </a>
+                                            </p>)
+                                        }
+
+                                    })}
                                 </li>
                             </ul>
                         </div>
