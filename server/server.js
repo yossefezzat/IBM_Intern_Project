@@ -14,6 +14,11 @@ var Cloudant = require('@cloudant/cloudant');
 var cloudant = Cloudant({account:process.env.CLOUDANT_ME, password:process.env.CLOUDANT_PSW});
 
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    next();
+});
 
 // let tweets = [];
     tweetsInit(async (tweet) =>{
@@ -40,9 +45,9 @@ app.get('/tweets', async (req, res) => {
     const data = await db.view('last_tweets','tweets', {
         limit: 15,
         descending: true,
-        desc: true,
         skip: req.query.skipCount
     });
+    console.log(data);
     res.send(data);
 
 });
@@ -92,10 +97,14 @@ app.get('/keywords', async (req, res) => {
             count: keywords[key]
         });
     }
-
-    res.send(data);
+    
+    res.send(getMax(data, 30));
 });
 
+function getMax(arr, limit){
+    const sorted = arr.sort((a,b) => b.count - a.count);
+    return sorted.slice(0, 30);
+}
 
 app.get('/sentiment/over-time', async (req, res) => {
     const db = cloudant.db.use('twitter_analysis');
@@ -140,7 +149,8 @@ app.get('/emotion/over-time', async (req, res) => {
             score: value.tone.score,
             tone_id: value.tone.tone_id,
             tone_name: value.tone.tone_name,
-            dayIndex: Math.round(_dayIndex)
+            dayIndex: Math.round(_dayIndex),
+            time: value.time
         }
         return item;
     });

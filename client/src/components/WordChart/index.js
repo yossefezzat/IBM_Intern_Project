@@ -16,7 +16,8 @@ export default class WordChart extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            transforms: []
+            transforms: [],
+            words: []
         }
         this.moveWords = this.moveWords.bind(this);
     }
@@ -25,9 +26,24 @@ export default class WordChart extends React.Component{
      * @description Instantiates an interval to call `this.moveWords` every 4sec.
      * @returns {null} 
      */
-    componentDidMount(){
-        this.moveWords();
-        this.interval = window.setInterval(this.moveWords, 4000)
+    async componentDidMount(){
+        this.interval = window.setInterval(this.moveWords, 8050);
+
+        const words = await fetch('https://ibm.articlebox.net/keywords')
+        .then(resp => resp.json())
+        .then(words => {
+            return words.filter(word => {
+                let lowCase = word.text.toLowerCase();
+                lowCase = lowCase.replace(/\ud83d[\ude00-\ude4f]/g, '');
+                return !lowCase.includes('ibm') && !lowCase.includes('rt'); 
+            });
+        });
+        this.length = words.length;
+        this.setState({
+            words
+        }, () => {
+            this.moveWords();
+        });
     }
 
     /**
@@ -44,6 +60,7 @@ export default class WordChart extends React.Component{
      */
     moveWords = () => {
         const words = document.querySelectorAll('.word');
+        if(!words.length) return;
         let transforms = [];
         const computedWidth = window.innerWidth > 800 ? 800 : window.innerWidth;
         [].slice.call(words).forEach(() => {
@@ -54,32 +71,25 @@ export default class WordChart extends React.Component{
         console.log(transforms);
         this.setState({
             transforms
-        })
+        });
     }
     /**
      * @description Responsible for rendering the component, hides & shows the dialogue based on `state.dialogShown`
      * @returns {JSX}
      */
     render(){
-        const words = [
-            {text: "RD", count: 50},
-            {text: "IBM", count: 53},
-            {text: "Regression", count: 30},
-            {text: "Spider-Man", count: 23},
-            {text: "Anarchy", count: 43},
-            {text: "Capitalism is doomed!", count: 99},
-        ];
-        this.length = words.length;
-        const maxCount = words.reduce((acc, curr) => curr.count > acc ? curr.count : acc, 0) 
-        const base = 120;
+
+        const maxCount = this.state.words.reduce((acc, curr) => curr.count > acc ? curr.count : acc, 0) 
+        const base = 150;
         return (
             <div className="wordsContainer my-5 col-md-8 col-sm-12 text-left">
-                {words.map((word, i) => {
+                {this.state.words.map((word, i) => {
                     return (
                         <span className="word" style={{
-                            opacity: word.count / maxCount > 0.4 ? word.count / maxCount : 0.4,
+                            opacity: word.count / maxCount > 0.7 ? word.count / maxCount : 0.7,
                             fontSize: (word.count / maxCount) * base + "px",
-                            transform: this.state.transforms[i] 
+                            transform: this.state.transforms[i],
+                            position: 'absolute'
                         }}>{word.text}</span>
                     )
                 })}
